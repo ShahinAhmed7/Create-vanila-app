@@ -1,9 +1,12 @@
-import "./styles.css";
+var chai = document.querySelector("#chai");
+var roton = document.querySelector("#roton");
+var result = document.querySelector("#result");
 
-document.getElementById("app").innerHTML = `
-<h1>Hello World!</h1>
-<div>
-  We use Parcel to bundle this sandbox, you can find more info about Parcel
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+roton.addEventListener("keypress", function() {
+  var match = chai.value.indexOf(roton.value);
+  if (match === -1) {
+    result.innerHTML = `The value ${roton.value} was not found`;
+  } else {
+    result.innerHTML = `The value ${roton.value} was found at ${match}`;
+  }
+});
